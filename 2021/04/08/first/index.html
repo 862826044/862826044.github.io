@@ -64,29 +64,12 @@
       
       
       
-      <pre><code>use std::collections::&#123;HashMap, HashSet&#125;;
-</code></pre>
-<p>fn main() {</p>
-<p>   let mut hd: HashMap&lt;&amp;str, HashMap&lt;&amp;str, Box&lt;Vec<f32>&gt;&gt;&gt; = HashMap::new();<br>   let mut tm1 = HashMap::new();<br>   //方法一： 如果tm1没有“book1”key,则insert key为“book1”和相应元素值。<br>   tm1.entry(“book1”).or_insert(Box::new(vec![1.0_f32]));<br>   hd.insert(“rust”, tm1);<br>   println!(“{:?}”, hd);</p>
-<p>   //方法二： 直接insert<br>   let mut tm2 = HashMap::new();<br>   tm2.insert(“book1”, Box::new(vec![2.0_f32]));<br>   hd.insert(“julia”, tm2);</p>
-<p>   println!(“{:?}”, hd);</p>
-<p>   // insert： Rust允许相同key(julia)的重复操作，会进行覆盖操作。</p>
-<pre><code>let mut tm3 = HashMap::new();
-tm3.insert(&quot;book1&quot;, Box::new(vec![3.0_f32]));
-tm3.insert(&quot;book2&quot;, Box::new(vec![4.0_f32]));
-hd.insert(&quot;julia&quot;, tm3);
-println!(&quot;&#123;:?&#125;&quot;, hd);
-
-
-hd.get_mut(&quot;julia&quot;).unwrap().get_mut(&quot;book2&quot;).unwrap().push(4.0);
-println!(&quot;&#123;:?&#125;&quot;, hd);
-</code></pre>
-<p>}</p>
+      <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> std::collections::&#123;HashMap, HashSet&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="keyword">let</span> <span class="keyword">mut</span> hd: HashMap&lt;&amp;<span class="built_in">str</span>, HashMap&lt;&amp;<span class="built_in">str</span>, <span class="built_in">Box</span>&lt;<span class="built_in">Vec</span>&lt;<span class="built_in">f32</span>&gt;&gt;&gt;&gt; = HashMap::new();</span><br><span class="line">   <span class="keyword">let</span> <span class="keyword">mut</span> tm1 = HashMap::new();</span><br><span class="line">   <span class="comment">//方法一： 如果tm1没有“book1”key,则insert key为“book1”和相应元素值。</span></span><br><span class="line">   tm1.entry(<span class="string">&quot;book1&quot;</span>).or_insert(<span class="built_in">Box</span>::new(<span class="built_in">vec!</span>[<span class="number">1.0_f32</span>]));</span><br><span class="line">   hd.insert(<span class="string">&quot;rust&quot;</span>, tm1);</span><br><span class="line">   <span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>, hd);</span><br><span class="line"></span><br><span class="line">   <span class="comment">//方法二： 直接insert</span></span><br><span class="line">   <span class="keyword">let</span> <span class="keyword">mut</span> tm2 = HashMap::new();</span><br><span class="line">   tm2.insert(<span class="string">&quot;book1&quot;</span>, <span class="built_in">Box</span>::new(<span class="built_in">vec!</span>[<span class="number">2.0_f32</span>]));</span><br><span class="line">   hd.insert(<span class="string">&quot;julia&quot;</span>, tm2);</span><br><span class="line"></span><br><span class="line">   <span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>, hd);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// insert： Rust允许相同key(julia)的重复操作，会进行覆盖操作。</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">let</span> <span class="keyword">mut</span> tm3 = HashMap::new();</span><br><span class="line">   tm3.insert(<span class="string">&quot;book1&quot;</span>, <span class="built_in">Box</span>::new(<span class="built_in">vec!</span>[<span class="number">3.0_f32</span>]));</span><br><span class="line">   tm3.insert(<span class="string">&quot;book2&quot;</span>, <span class="built_in">Box</span>::new(<span class="built_in">vec!</span>[<span class="number">4.0_f32</span>]));</span><br><span class="line">   hd.insert(<span class="string">&quot;julia&quot;</span>, tm3);</span><br><span class="line">   <span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>, hd);</span><br><span class="line">    </span><br><span class="line">   <span class="comment">//向Vec&lt;f32&gt;插入元素</span></span><br><span class="line">   hd.get_mut(<span class="string">&quot;julia&quot;</span>).unwrap().get_mut(<span class="string">&quot;book2&quot;</span>).unwrap().push(<span class="number">4.0</span>);</span><br><span class="line">   <span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>, hd);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/08/first/" data-id="ckndwr2530000gwtvgk8z0pck" class="article-share-link">
+      <a data-url="http://example.com/2021/04/08/first/" data-id="ckndwx3w30000wwtv7xjwa45n" class="article-share-link">
         Share
       </a>
       

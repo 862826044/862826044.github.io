@@ -65,10 +65,28 @@
       
       
       <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Struct cargo::core::package::Package</span><br><span class="line">Struct cargo::core::package::Package.dependencies()</span><br><span class="line"><span class="comment">//&lt;https://docs.rs/cargo/0.52.0/cargo/core/package/struct.Package.html&gt;</span></span><br><span class="line">Struct cargo::core::manifest::Target<span class="comment">//有关软件包的一部分的二进制文件，库，示例等信息。</span></span><br><span class="line"><span class="comment">//&lt;https://docs.rs/cargo/0.52.0/cargo/core/manifest/struct.Target.html&gt;	</span></span><br><span class="line">Enum cargo::core::manifest::TargetKind<span class="comment">//pub enum TargetKind &#123; Lib(Vec&lt;CrateType&gt;),Bin,Test,Bench,...&#125;</span></span><br><span class="line"><span class="comment">//&lt;https://docs.rs/cargo/0.52.0/cargo/core/manifest/enum.TargetKind.html&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>real_main(args: &amp;Args, config: &amp;mut Config) -&gt; CliResult</p>
+<p>​        get_workspace(config: &amp;Config, manifest_path: Option<PathBuf>) -&gt; CargoResult<Workspace></p>
+<p>​        get_registry&lt;’a&gt;(config: &amp;’a Config,package: &amp;Package) -&gt; CargoResult&lt;PackageRegistry&lt;’a&gt;&gt;</p>
+<p>​        resolve&lt;’a,’cfg&gt;(package_id: PackageId,registry: &amp;mut PackageRegistry&lt;’cfg&gt;,ws: &amp;’a Workspace&lt;’cfg&gt;,features: &amp;[String],all_features: bool,no_default_features: bool) -&gt; CargoResult&lt;(PackageSet&lt;’a&gt;,Resolve)&gt;</p>
+<p>​        get_cfgs(config: &amp;Config,target: &amp;Option<String>,ws: &amp;Workspace) -&gt; CargoResult&lt;Option&lt;Vec<Cfg>&gt;&gt;</p>
+<p>​        build_graph&lt;’a&gt;(resolve: &amp;’a Resolve, packages: &amp;’a PackageSet, root: PackageId, target: Option&lt;&amp;str&gt;, cfgs: Option&lt;&amp;[Cfg]&gt;, extra_deps: ExtraDeps) -&gt; CargoResult<Graph></p>
+<p>​        run_scan_mode_default(config: &amp;Config, ws: &amp;Workspace, packages: &amp;PackageSet, root_pack_id: PackageId, graph: &amp;Graph, pc: &amp;PrintConfig, args: &amp;Args) -&gt; CliResult</p>
+<p>​                build_compile_options&lt;’a&gt;(args: &amp;’a Args, config: &amp;’a Config) -&gt; CompileOptions</p>
+<p>​                resolve_rs_file_deps(copt: &amp;CompileOptions, ws: &amp;Workspace) -&gt; Result&lt;HashSet<PathBuf>,RsResolveError&gt;</p>
+<p>​                        is_file_with_ext(entry: &amp;DirEntry, file_ext: &amp;str) -&gt; bool</p>
+<p>​                        parse_rustc_dep_info(rustc_dep_info: &amp;Path) -&gt; CargoResult&lt;Vec&lt;(String, Vec<String>)&gt;&gt;</p>
+<p>​                find_unsafe_in_packages<F>(packs: &amp;PackageSet, allow_partial_results: bool, include_tests: IncludeTests, mode: ScanMode, mut progress_step: F) -&gt; GeigerContext</p>
+<p>​                        find_rs_files_in_packages&lt;’a&gt;(packs: &amp;’a [&amp;Package]) -&gt; impl Iterator&lt;Item = (PackageId, RsFile)&gt; + ‘a </p>
+<p>​                                find_rs_files_in_package(pack: &amp;Package) -&gt; Vec<RsFile></p>
+<p>​                                        find_rs_files_in_dir(dir: &amp;Path) -&gt; impl Iterator&lt;Item = PathBuf&gt;</p>
+<p>​                                        into_rs_code_file(kind: &amp;TargetKind, path: PathBuf) -&gt; RsFile</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/08/Geiger/" data-id="cknfzadah0000wgtv4gfyentd" class="article-share-link">
+      <a data-url="http://example.com/2021/04/08/Geiger/" data-id="cknqv5let0004nwtv3md41clg" class="article-share-link">
         Share
       </a>
       
@@ -82,20 +100,15 @@
   
 <nav class="article-nav">
   
-  <a href="/2021/04/12/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%86%E7%A6%BB(Rust)/" class="article-nav-link">
+  <a href="/2021/04/08/HashMap%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8(Rust)/" class="article-nav-link">
     <strong class="article-nav-caption">Newer</strong>
     <div class="article-nav-title">
       
-      字符串的分离(Rust)
+      HashMap的简单使用(Rust)
       
     </div>
   </a>
   
-  
-  <a href="/2021/04/08/HashMap%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8(Rust)/" class="article-nav-link">
-    <strong class="article-nav-caption">Older</strong>
-    <div class="article-nav-title">HashMap的简单使用(Rust)</div>
-  </a>
   
 </nav>
 

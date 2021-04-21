@@ -62,6 +62,58 @@
     <h1 class="page-type-title"></h1>
     
     
+    <article id="post-格式化输出(Rust)" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/04/21/%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA(Rust)/">格式化输出(Rust)</a>
+</h2>
+
+
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2021/04/21/%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA(Rust)/" class="article-date">
+  <time datetime="2021-04-21T02:07:50.000Z" itemprop="datePublished">2021-04-21</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line"><span class="keyword">let</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">let</span> c = <span class="number">7</span>;</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;column: 123456789&quot;</span>);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 1: \r&quot;</span>);</span><br><span class="line"><span class="built_in">print!</span>(<span class="string">&quot;Line 2: \n&quot;</span>);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 3: \x1B[&#123;&#125;C&quot;</span>,c);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 4: &#123;&#125;&quot;</span>,a);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 5: &#123;: &lt;2&#125;&quot;</span>,a);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 6: &#123;: &lt;1&#125; &#123;: &lt;2&#125;&quot;</span>,a,b);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 7: &#123;: &lt;2&#125; &#123;: &lt;1&#125;&quot;</span>,a,b);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 8: &#123;: &lt;3&#125; &#123;: &lt;1&#125;&quot;</span>,a,b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//column: 123456789</span></span><br><span class="line"><span class="comment">//Line 1: </span></span><br><span class="line"><span class="comment">//Line 2: </span></span><br><span class="line"><span class="comment">//Line 3: [7C</span></span><br><span class="line"><span class="comment">//Line 4: 2</span></span><br><span class="line"><span class="comment">//Line 5: 2 </span></span><br><span class="line"><span class="comment">//Line 6: 2 5 </span></span><br><span class="line"><span class="comment">//Line 7: 2  5</span></span><br><span class="line"><span class="comment">//Line 8: 2   5</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/21/%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA(Rust)/" data-id="cknqv5ler0003nwtv1xtnbzxw" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rust-Programming/" rel="tag">Rust Programming</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
     <article id="post-Zhu" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -99,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/13/Zhu/" data-id="cknfzadbx0003wgtvgvlf5mkz" class="article-share-link">
+      <a data-url="http://example.com/2021/04/13/Zhu/" data-id="cknqv5lf10008nwtv2ddc3h07" class="article-share-link">
         Share
       </a>
       
@@ -151,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/13/HashSet%E7%9A%84%E4%BD%BF%E7%94%A8(Rust)/" data-id="cknfzadc00004wgtv702c0qrk" class="article-share-link">
+      <a data-url="http://example.com/2021/04/13/HashSet%E7%9A%84%E4%BD%BF%E7%94%A8(Rust)/" data-id="cknqv5le80000nwtv1g0u5jpr" class="article-share-link">
         Share
       </a>
       
@@ -203,7 +255,60 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/12/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%86%E7%A6%BB(Rust)/" data-id="cknfzadc50007wgtvci7w7y6p" class="article-share-link">
+      <a data-url="http://example.com/2021/04/12/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%86%E7%A6%BB(Rust)/" data-id="cknqv5lev0005nwtva0i58lx5" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rust-Programming/" rel="tag">Rust Programming</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-HashMap的简单使用(Rust)" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/04/08/HashMap%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8(Rust)/">HashMap的简单使用(Rust)</a>
+</h2>
+
+
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2021/04/08/HashMap%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8(Rust)/" class="article-date">
+  <time datetime="2021-04-08T02:07:50.000Z" itemprop="datePublished">2021-04-08</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> std::collections::&#123;HashMap, HashSet&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="keyword">let</span> <span class="keyword">mut</span> hd: HashMap&lt;&amp;<span class="built_in">str</span>, HashMap&lt;&amp;<span class="built_in">str</span>, <span class="built_in">Box</span>&lt;<span class="built_in">Vec</span>&lt;<span class="built_in">f32</span>&gt;&gt;&gt;&gt; = HashMap::new();</span><br><span class="line">   <span class="keyword">let</span> <span class="keyword">mut</span> tm1 = HashMap::new();</span><br><span class="line">   <span class="comment">//方法一： 如果tm1没有“book1”key,则insert key为“book1”和相应元素值。</span></span><br><span class="line">   tm1.entry(<span class="string">&quot;book1&quot;</span>).or_insert(<span class="built_in">Box</span>::new(<span class="built_in">vec!</span>[<span class="number">1.0_f32</span>]));</span><br><span class="line">   hd.insert(<span class="string">&quot;rust&quot;</span>, tm1);</span><br><span class="line">   <span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>, hd);</span><br><span class="line"></span><br><span class="line">   <span class="comment">//方法二： 直接insert</span></span><br><span class="line">   <span class="keyword">let</span> <span class="keyword">mut</span> tm2 = HashMap::new();</span><br><span class="line">   tm2.insert(<span class="string">&quot;book1&quot;</span>, <span class="built_in">Box</span>::new(<span class="built_in">vec!</span>[<span class="number">2.0_f32</span>]));</span><br><span class="line">   hd.insert(<span class="string">&quot;julia&quot;</span>, tm2);</span><br><span class="line"></span><br><span class="line">   <span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>, hd);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// insert： Rust允许相同key(julia)的重复操作，会进行覆盖操作。</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">let</span> <span class="keyword">mut</span> tm3 = HashMap::new();</span><br><span class="line">   tm3.insert(<span class="string">&quot;book1&quot;</span>, <span class="built_in">Box</span>::new(<span class="built_in">vec!</span>[<span class="number">3.0_f32</span>]));</span><br><span class="line">   tm3.insert(<span class="string">&quot;book2&quot;</span>, <span class="built_in">Box</span>::new(<span class="built_in">vec!</span>[<span class="number">4.0_f32</span>]));</span><br><span class="line">   hd.insert(<span class="string">&quot;julia&quot;</span>, tm3);</span><br><span class="line">   <span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>, hd);</span><br><span class="line">    </span><br><span class="line">   <span class="comment">//向Vec&lt;f32&gt;插入元素</span></span><br><span class="line">   hd.get_mut(<span class="string">&quot;julia&quot;</span>).unwrap().get_mut(<span class="string">&quot;book2&quot;</span>).unwrap().push(<span class="number">4.0</span>);</span><br><span class="line">   <span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>, hd);</span><br><span class="line">   </span><br><span class="line">   <span class="comment">//统计每个字母出现了几次</span></span><br><span class="line">   <span class="keyword">let</span> <span class="keyword">mut</span> letters = HashMap::new();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> ch <span class="keyword">in</span> <span class="string">&quot;a short treatise on fungi&quot;</span>.chars() </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">let</span> counter = letters.entry(ch).or_insert(<span class="number">0</span>);</span><br><span class="line">		*counter += <span class="number">1</span>;</span><br><span class="line">		<span class="built_in">println!</span>(<span class="string">&quot;ch = &#123;0&#125;  counter = &#123;1&#125;&quot;</span>,ch, *counter);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">println!</span>(<span class="string">&quot;letters = &#123;:?&#125;&quot;</span>,letters);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/08/HashMap%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8(Rust)/" data-id="cknqv5lej0001nwtv9cusg53t" class="article-share-link">
         Share
       </a>
       
@@ -252,67 +357,32 @@
       
       
       <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Struct cargo::core::package::Package</span><br><span class="line">Struct cargo::core::package::Package.dependencies()</span><br><span class="line"><span class="comment">//&lt;https://docs.rs/cargo/0.52.0/cargo/core/package/struct.Package.html&gt;</span></span><br><span class="line">Struct cargo::core::manifest::Target<span class="comment">//有关软件包的一部分的二进制文件，库，示例等信息。</span></span><br><span class="line"><span class="comment">//&lt;https://docs.rs/cargo/0.52.0/cargo/core/manifest/struct.Target.html&gt;	</span></span><br><span class="line">Enum cargo::core::manifest::TargetKind<span class="comment">//pub enum TargetKind &#123; Lib(Vec&lt;CrateType&gt;),Bin,Test,Bench,...&#125;</span></span><br><span class="line"><span class="comment">//&lt;https://docs.rs/cargo/0.52.0/cargo/core/manifest/enum.TargetKind.html&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>real_main(args: &amp;Args, config: &amp;mut Config) -&gt; CliResult</p>
+<p>​        get_workspace(config: &amp;Config, manifest_path: Option<PathBuf>) -&gt; CargoResult<Workspace></p>
+<p>​        get_registry&lt;’a&gt;(config: &amp;’a Config,package: &amp;Package) -&gt; CargoResult&lt;PackageRegistry&lt;’a&gt;&gt;</p>
+<p>​        resolve&lt;’a,’cfg&gt;(package_id: PackageId,registry: &amp;mut PackageRegistry&lt;’cfg&gt;,ws: &amp;’a Workspace&lt;’cfg&gt;,features: &amp;[String],all_features: bool,no_default_features: bool) -&gt; CargoResult&lt;(PackageSet&lt;’a&gt;,Resolve)&gt;</p>
+<p>​        get_cfgs(config: &amp;Config,target: &amp;Option<String>,ws: &amp;Workspace) -&gt; CargoResult&lt;Option&lt;Vec<Cfg>&gt;&gt;</p>
+<p>​        build_graph&lt;’a&gt;(resolve: &amp;’a Resolve, packages: &amp;’a PackageSet, root: PackageId, target: Option&lt;&amp;str&gt;, cfgs: Option&lt;&amp;[Cfg]&gt;, extra_deps: ExtraDeps) -&gt; CargoResult<Graph></p>
+<p>​        run_scan_mode_default(config: &amp;Config, ws: &amp;Workspace, packages: &amp;PackageSet, root_pack_id: PackageId, graph: &amp;Graph, pc: &amp;PrintConfig, args: &amp;Args) -&gt; CliResult</p>
+<p>​                build_compile_options&lt;’a&gt;(args: &amp;’a Args, config: &amp;’a Config) -&gt; CompileOptions</p>
+<p>​                resolve_rs_file_deps(copt: &amp;CompileOptions, ws: &amp;Workspace) -&gt; Result&lt;HashSet<PathBuf>,RsResolveError&gt;</p>
+<p>​                        is_file_with_ext(entry: &amp;DirEntry, file_ext: &amp;str) -&gt; bool</p>
+<p>​                        parse_rustc_dep_info(rustc_dep_info: &amp;Path) -&gt; CargoResult&lt;Vec&lt;(String, Vec<String>)&gt;&gt;</p>
+<p>​                find_unsafe_in_packages<F>(packs: &amp;PackageSet, allow_partial_results: bool, include_tests: IncludeTests, mode: ScanMode, mut progress_step: F) -&gt; GeigerContext</p>
+<p>​                        find_rs_files_in_packages&lt;’a&gt;(packs: &amp;’a [&amp;Package]) -&gt; impl Iterator&lt;Item = (PackageId, RsFile)&gt; + ‘a </p>
+<p>​                                find_rs_files_in_package(pack: &amp;Package) -&gt; Vec<RsFile></p>
+<p>​                                        find_rs_files_in_dir(dir: &amp;Path) -&gt; impl Iterator&lt;Item = PathBuf&gt;</p>
+<p>​                                        into_rs_code_file(kind: &amp;TargetKind, path: PathBuf) -&gt; RsFile</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/08/Geiger/" data-id="cknfzadah0000wgtv4gfyentd" class="article-share-link">
+      <a data-url="http://example.com/2021/04/08/Geiger/" data-id="cknqv5let0004nwtv3md41clg" class="article-share-link">
         Share
       </a>
       
 <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rust-Programming-Tool/" rel="tag">Rust Programming Tool</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-    
-    <article id="post-HashMap的简单使用(Rust)" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/04/08/HashMap%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8(Rust)/">HashMap的简单使用(Rust)</a>
-</h2>
-
-
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2021/04/08/HashMap%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8(Rust)/" class="article-date">
-  <time datetime="2021-04-08T02:07:50.000Z" itemprop="datePublished">2021-04-08</time>
-</a>
-      
-    </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-      <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> std::collections::&#123;HashMap, HashSet&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="keyword">let</span> <span class="keyword">mut</span> hd: HashMap&lt;&amp;<span class="built_in">str</span>, HashMap&lt;&amp;<span class="built_in">str</span>, <span class="built_in">Box</span>&lt;<span class="built_in">Vec</span>&lt;<span class="built_in">f32</span>&gt;&gt;&gt;&gt; = HashMap::new();</span><br><span class="line">   <span class="keyword">let</span> <span class="keyword">mut</span> tm1 = HashMap::new();</span><br><span class="line">   <span class="comment">//方法一： 如果tm1没有“book1”key,则insert key为“book1”和相应元素值。</span></span><br><span class="line">   tm1.entry(<span class="string">&quot;book1&quot;</span>).or_insert(<span class="built_in">Box</span>::new(<span class="built_in">vec!</span>[<span class="number">1.0_f32</span>]));</span><br><span class="line">   hd.insert(<span class="string">&quot;rust&quot;</span>, tm1);</span><br><span class="line">   <span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>, hd);</span><br><span class="line"></span><br><span class="line">   <span class="comment">//方法二： 直接insert</span></span><br><span class="line">   <span class="keyword">let</span> <span class="keyword">mut</span> tm2 = HashMap::new();</span><br><span class="line">   tm2.insert(<span class="string">&quot;book1&quot;</span>, <span class="built_in">Box</span>::new(<span class="built_in">vec!</span>[<span class="number">2.0_f32</span>]));</span><br><span class="line">   hd.insert(<span class="string">&quot;julia&quot;</span>, tm2);</span><br><span class="line"></span><br><span class="line">   <span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>, hd);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// insert： Rust允许相同key(julia)的重复操作，会进行覆盖操作。</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">let</span> <span class="keyword">mut</span> tm3 = HashMap::new();</span><br><span class="line">   tm3.insert(<span class="string">&quot;book1&quot;</span>, <span class="built_in">Box</span>::new(<span class="built_in">vec!</span>[<span class="number">3.0_f32</span>]));</span><br><span class="line">   tm3.insert(<span class="string">&quot;book2&quot;</span>, <span class="built_in">Box</span>::new(<span class="built_in">vec!</span>[<span class="number">4.0_f32</span>]));</span><br><span class="line">   hd.insert(<span class="string">&quot;julia&quot;</span>, tm3);</span><br><span class="line">   <span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>, hd);</span><br><span class="line">    </span><br><span class="line">   <span class="comment">//向Vec&lt;f32&gt;插入元素</span></span><br><span class="line">   hd.get_mut(<span class="string">&quot;julia&quot;</span>).unwrap().get_mut(<span class="string">&quot;book2&quot;</span>).unwrap().push(<span class="number">4.0</span>);</span><br><span class="line">   <span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>, hd);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/08/HashMap%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8(Rust)/" data-id="cknfzadc30006wgtvbq65ajic" class="article-share-link">
-        Share
-      </a>
-      
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rust-Programming/" rel="tag">Rust Programming</a></li></ul>
 
     </footer>
 

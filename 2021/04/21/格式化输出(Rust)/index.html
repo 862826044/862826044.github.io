@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    字符串的分离(Rust) |
+    格式化输出(Rust) |
     
     Hexo</title>
   
@@ -30,7 +30,7 @@
 <body>
   <main class="content">
     <section class="outer">
-  <article id="post-字符串的分离(Rust)" class="article article-type-post" itemscope
+  <article id="post-格式化输出(Rust)" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -39,7 +39,7 @@
       
 
 <h1 class="article-title" itemprop="name">
-  字符串的分离(Rust)
+  格式化输出(Rust)
 </h1>
 
 
@@ -49,8 +49,8 @@
 
     
     <div class="article-meta">
-      <a href="/2021/04/12/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%86%E7%A6%BB(Rust)/" class="article-date">
-  <time datetime="2021-04-12T02:07:50.000Z" itemprop="datePublished">2021-04-12</time>
+      <a href="/2021/04/21/%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA(Rust)/" class="article-date">
+  <time datetime="2021-04-21T02:07:50.000Z" itemprop="datePublished">2021-04-21</time>
 </a>
       
     </div>
@@ -64,11 +64,11 @@
       
       
       
-      <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line"><span class="comment">//String</span></span><br><span class="line"><span class="keyword">let</span> args=<span class="string">&quot;Return the opposite Direction.&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> features: <span class="built_in">Vec</span>&lt;<span class="built_in">String</span>&gt; = args.split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">                                .map(<span class="built_in">str</span>::to_owned)</span><br><span class="line">                                .collect::&lt;<span class="built_in">Vec</span>&lt;<span class="built_in">String</span>&gt;&gt;();</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>,features);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//Option&lt;String&gt;</span></span><br><span class="line"><span class="keyword">let</span> args: <span class="built_in">Option</span>&lt;<span class="built_in">String</span>&gt; = <span class="literal">Some</span>(<span class="string">&quot;Return the opposite Direction.&quot;</span>.to_string());</span><br><span class="line"><span class="keyword">let</span> features: <span class="built_in">Vec</span>&lt;<span class="built_in">String</span>&gt; = args.as_ref()<span class="comment">//Option&lt;String&gt; -&gt; Option&lt;&amp;String&gt;</span></span><br><span class="line">                                .cloned()<span class="comment">//Option&lt;&amp;String&gt; -&gt; Option&lt;String&gt;</span></span><br><span class="line">                                .unwrap_or_else(<span class="built_in">String</span>::new)<span class="comment">//Option&lt;String&gt; -&gt; String</span></span><br><span class="line">                                .split(<span class="string">&#x27; &#x27;</span>)<span class="comment">//返回一个迭代器</span></span><br><span class="line">                                .map(<span class="built_in">str</span>::to_owned)<span class="comment">//Takes a closure and creates an iterator which calls that closure on each element.</span></span><br><span class="line">                                .collect::&lt;<span class="built_in">Vec</span>&lt;<span class="built_in">String</span>&gt;&gt;();<span class="comment">//Transforms an iterator into a collection.</span></span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>,features);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line"><span class="keyword">let</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">let</span> c = <span class="number">7</span>;</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;column: 123456789&quot;</span>);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 1: \r&quot;</span>);</span><br><span class="line"><span class="built_in">print!</span>(<span class="string">&quot;Line 2: \n&quot;</span>);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 3: \x1B[&#123;&#125;C&quot;</span>,c);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 4: &#123;&#125;&quot;</span>,a);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 5: &#123;: &lt;2&#125;&quot;</span>,a);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 6: &#123;: &lt;1&#125; &#123;: &lt;2&#125;&quot;</span>,a,b);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 7: &#123;: &lt;2&#125; &#123;: &lt;1&#125;&quot;</span>,a,b);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 8: &#123;: &lt;3&#125; &#123;: &lt;1&#125;&quot;</span>,a,b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//column: 123456789</span></span><br><span class="line"><span class="comment">//Line 1: </span></span><br><span class="line"><span class="comment">//Line 2: </span></span><br><span class="line"><span class="comment">//Line 3: [7C</span></span><br><span class="line"><span class="comment">//Line 4: 2</span></span><br><span class="line"><span class="comment">//Line 5: 2 </span></span><br><span class="line"><span class="comment">//Line 6: 2 5 </span></span><br><span class="line"><span class="comment">//Line 7: 2  5</span></span><br><span class="line"><span class="comment">//Line 8: 2   5</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/12/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%86%E7%A6%BB(Rust)/" data-id="cknqv5lev0005nwtva0i58lx5" class="article-share-link">
+      <a data-url="http://example.com/2021/04/21/%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA(Rust)/" data-id="cknqv5ler0003nwtv1xtnbzxw" class="article-share-link">
         Share
       </a>
       
@@ -82,19 +82,10 @@
   
 <nav class="article-nav">
   
-  <a href="/2021/04/13/HashSet%E7%9A%84%E4%BD%BF%E7%94%A8(Rust)/" class="article-nav-link">
-    <strong class="article-nav-caption">Newer</strong>
-    <div class="article-nav-title">
-      
-      hashset的使用(Rust)
-      
-    </div>
-  </a>
   
-  
-  <a href="/2021/04/08/HashMap%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8(Rust)/" class="article-nav-link">
+  <a href="/2021/04/13/Zhu/" class="article-nav-link">
     <strong class="article-nav-caption">Older</strong>
-    <div class="article-nav-title">HashMap的简单使用(Rust)</div>
+    <div class="article-nav-title">zhu</div>
   </a>
   
 </nav>

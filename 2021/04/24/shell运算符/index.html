@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    格式化输出(Rust) |
+    shell传递参数 |
     
     Hexo</title>
   
@@ -30,7 +30,7 @@
 <body>
   <main class="content">
     <section class="outer">
-  <article id="post-格式化输出(Rust)" class="article article-type-post" itemscope
+  <article id="post-shell运算符" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -39,7 +39,7 @@
       
 
 <h1 class="article-title" itemprop="name">
-  格式化输出(Rust)
+  shell传递参数
 </h1>
 
 
@@ -49,8 +49,8 @@
 
     
     <div class="article-meta">
-      <a href="/2021/04/21/%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA(Rust)/" class="article-date">
-  <time datetime="2021-04-21T02:07:50.000Z" itemprop="datePublished">2021-04-21</time>
+      <a href="/2021/04/24/shell%E8%BF%90%E7%AE%97%E7%AC%A6/" class="article-date">
+  <time datetime="2021-04-24T11:22:35.000Z" itemprop="datePublished">2021-04-24</time>
 </a>
       
     </div>
@@ -64,15 +64,16 @@
       
       
       
-      <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line"><span class="keyword">let</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">let</span> c = <span class="number">7</span>;</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;column: 123456789&quot;</span>);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 1: \r&quot;</span>);</span><br><span class="line"><span class="built_in">print!</span>(<span class="string">&quot;Line 2: \n&quot;</span>);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 3: \x1B[&#123;&#125;C&quot;</span>,c);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 4: &#123;&#125;&quot;</span>,a);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 5: &#123;: &lt;2&#125;&quot;</span>,a);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 6: &#123;: &lt;1&#125; &#123;: &lt;2&#125;&quot;</span>,a,b);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 7: &#123;: &lt;2&#125; &#123;: &lt;1&#125;&quot;</span>,a,b);</span><br><span class="line"><span class="built_in">println!</span>(<span class="string">&quot;Line 8: &#123;: &lt;3&#125; &#123;: &lt;1&#125;&quot;</span>,a,b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//column: 123456789</span></span><br><span class="line"><span class="comment">//Line 1: </span></span><br><span class="line"><span class="comment">//Line 2: </span></span><br><span class="line"><span class="comment">//Line 3: [7C</span></span><br><span class="line"><span class="comment">//Line 4: 2</span></span><br><span class="line"><span class="comment">//Line 5: 2 </span></span><br><span class="line"><span class="comment">//Line 6: 2 5 </span></span><br><span class="line"><span class="comment">//Line 7: 2  5</span></span><br><span class="line"><span class="comment">//Line 8: 2   5</span></span><br></pre></td></tr></table></figure>
+      <p>一共分为五种运算符<br>原生bash不支持简单的数学运算，但是可以通过其他命令来实现，例如：awk和expr.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">算数运算符</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">关系运算符</span></span><br><span class="line"><span class="meta">#</span><span class="bash">布尔运算符</span></span><br><span class="line"><span class="meta">#</span><span class="bash">字符串运算符</span></span><br><span class="line"><span class="meta">#</span><span class="bash">文件测试运算符</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/21/%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA(Rust)/" data-id="cknvo6ut700086ktv3xp3atyd" class="article-share-link">
+      <a data-url="http://example.com/2021/04/24/shell%E8%BF%90%E7%AE%97%E7%AC%A6/" data-id="cknvo6ut500056ktvad559y8u" class="article-share-link">
         Share
       </a>
       
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rust-Programming/" rel="tag">Rust Programming</a></li></ul>
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/" rel="tag">Shell</a></li></ul>
 
     </footer>
 
@@ -82,19 +83,10 @@
   
 <nav class="article-nav">
   
-  <a href="/2021/04/24/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-nav-link">
-    <strong class="article-nav-caption">Newer</strong>
-    <div class="article-nav-title">
-      
-      shell学习笔记
-      
-    </div>
-  </a>
   
-  
-  <a href="/2021/04/13/Zhu/" class="article-nav-link">
+  <a href="/2021/04/24/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/" class="article-nav-link">
     <strong class="article-nav-caption">Older</strong>
-    <div class="article-nav-title">zhu</div>
+    <div class="article-nav-title">shell传递参数</div>
   </a>
   
 </nav>

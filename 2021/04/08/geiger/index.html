@@ -66,6 +66,7 @@
       
       <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Struct cargo::core::package::Package</span><br><span class="line">Struct cargo::core::package::Package.dependencies()</span><br><span class="line"><span class="comment">//&lt;https://docs.rs/cargo/0.52.0/cargo/core/package/struct.Package.html&gt;</span></span><br><span class="line">Struct cargo::core::manifest::Target<span class="comment">//有关软件包的一部分的二进制文件，库，示例等信息。</span></span><br><span class="line"><span class="comment">//&lt;https://docs.rs/cargo/0.52.0/cargo/core/manifest/struct.Target.html&gt;	</span></span><br><span class="line">Enum cargo::core::manifest::TargetKind<span class="comment">//pub enum TargetKind &#123; Lib(Vec&lt;CrateType&gt;),Bin,Test,Bench,...&#125;</span></span><br><span class="line"><span class="comment">//&lt;https://docs.rs/cargo/0.52.0/cargo/core/manifest/enum.TargetKind.html&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<p>parse_args() -&gt; Result&lt;Args, Box<dyn std::error::Error>&gt;</p>
 <p>real_main(args: &amp;Args, config: &amp;mut Config) -&gt; CliResult</p>
 <p>​        get_workspace(config: &amp;Config, manifest_path: Option<PathBuf>) -&gt; CargoResult<Workspace></p>
 <p>​        get_registry&lt;’a&gt;(config: &amp;’a Config,package: &amp;Package) -&gt; CargoResult&lt;PackageRegistry&lt;’a&gt;&gt;</p>
@@ -82,11 +83,26 @@
 <p>​                                find_rs_files_in_package(pack: &amp;Package) -&gt; Vec<RsFile></p>
 <p>​                                        find_rs_files_in_dir(dir: &amp;Path) -&gt; impl Iterator&lt;Item = PathBuf&gt;</p>
 <p>​                                        into_rs_code_file(kind: &amp;TargetKind, path: PathBuf) -&gt; RsFile</p>
+<p>​                        find_unsafe_in_file(p: &amp;Path, include_tests: IncludeTests) -&gt; Result&lt;RsFileMetrics, ScanFileError&gt;</p>
+<p>​                will_output_emoji(&amp;self) -&gt; bool</p>
+<p>​                emoji(&amp;self, kind: SymbolKind) -&gt; Box<dyn std::fmt::Display></p>
+<p>​                walk_dependency_tree(root_pack_id: PackageId, graph: &amp;Graph, pc: &amp;PrintConfig) -&gt; Vec<TextTreeLine></p>
+<p>​                        walk_dependency_node(package: &amp;Node, graph: &amp;Graph, visited_deps: &amp;mut HashSet<PackageId>, levels_continue: &amp;mut Vec<bool>, pc: &amp;PrintConfig) -&gt; Vec<TextTreeLine> </p>
+<p>​                                get_tree_symbols(cs: Charset) -&gt; TreeSymbols</p>
+<p>​                                walk_dependency_kind(kind: DepKind, deps: &amp;mut Vec&lt;&amp;Node&gt;, graph: &amp;Graph, visited_deps: &amp;mut HashSet<PackageId>, levels_continue: &amp;mut Vec<bool>, pc: &amp;PrintConfig) -&gt; Vec<TextTreeLine></p>
+<p>​                                        get_tree_symbols(cs: Charset) -&gt; TreeSymbols</p>
+<p>​                                        walk_dependency_node(package: &amp;Node, graph: &amp;Graph, visited_deps: &amp;mut HashSet<PackageId>, levels_continue: &amp;mut Vec<bool>, pc: &amp;PrintConfig) -&gt; Vec<TextTreeLine>     </p>
+<p>​                colorize(s: String, detection_status: &amp;DetectionStatus) -&gt; colored::ColoredString</p>
+<p>​                        table_row(pms: &amp;PackageMetrics, rs_files_used: &amp;HashSet<PathBuf>) -&gt; String（嵌套函数）</p>
+<p>​                will_output_emoji(&amp;self) -&gt; bool</p>
+<p>​                get_kind_group_name(k: DepKind) -&gt; Option&lt;&amp;’static str&gt;</p>
+<p>​                table_row_empty() -&gt; String</p>
+<p>​                table_footer(used: CounterBlock, not_used: CounterBlock, status: DetectionStatus) -&gt; colored::ColoredString </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/08/Geiger/" data-id="cknto21pq00003otvhby2c2zs" class="article-share-link">
+      <a data-url="http://example.com/2021/04/08/Geiger/" data-id="cknvo6usq00006ktv6him9y26" class="article-share-link">
         Share
       </a>
       

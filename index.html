@@ -62,6 +62,165 @@
     <h1 class="page-type-title"></h1>
     
     
+    <article id="post-shell运算符" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/04/24/shell%E8%BF%90%E7%AE%97%E7%AC%A6/">shell传递参数</a>
+</h2>
+
+
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2021/04/24/shell%E8%BF%90%E7%AE%97%E7%AC%A6/" class="article-date">
+  <time datetime="2021-04-24T11:22:35.000Z" itemprop="datePublished">2021-04-24</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <p>一共分为五种运算符<br>原生bash不支持简单的数学运算，但是可以通过其他命令来实现，例如：awk和expr.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">算数运算符</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">关系运算符</span></span><br><span class="line"><span class="meta">#</span><span class="bash">布尔运算符</span></span><br><span class="line"><span class="meta">#</span><span class="bash">字符串运算符</span></span><br><span class="line"><span class="meta">#</span><span class="bash">文件测试运算符</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/24/shell%E8%BF%90%E7%AE%97%E7%AC%A6/" data-id="cknvo6ut500056ktvad559y8u" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/" rel="tag">Shell</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-shell传递参数" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/04/24/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/">shell传递参数</a>
+</h2>
+
+
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2021/04/24/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/" class="article-date">
+  <time datetime="2021-04-24T11:04:35.000Z" itemprop="datePublished">2021-04-24</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <p>我们可以在执行Shell脚本时，向脚本传递参数，获取参数的格式$n,n代表第几个参数</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">！bin/bash</span></span><br><span class="line"></span><br><span class="line">echo &quot;执行的文件名：$0&quot;;</span><br><span class="line">echo &quot;第一个参数为：$1&quot;;</span><br><span class="line">echo &quot;第二个参数为: $2&quot;;</span><br><span class="line"></span><br><span class="line">echo &quot;参数个数为：$#&quot;;</span><br><span class="line"></span><br><span class="line">echo &quot;将传递的参数作为一个字符串显示：$*&quot;;   #	&quot;参数1 参数2&quot;</span><br><span class="line">echo &quot;将每个参数作为字符串显示：$@&quot;;   #  &quot;参数1&quot; &quot;参数2&quot;</span><br><span class="line">echo &quot;---\$*---&quot;</span><br><span class="line">for i in &quot;$*&quot;;</span><br><span class="line">do</span><br><span class="line">	echo $i</span><br><span class="line">done</span><br><span class="line">echo &quot;---\$@---&quot;</span><br><span class="line">for i in &quot;$@&quot;;</span><br><span class="line">do</span><br><span class="line">	echo $i</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">echo &quot;脚本运行的当前进程号：$$&quot;;</span><br><span class="line"></span><br><span class="line">echo &quot;后台运行的最后一个进程的ID：$!&quot;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/24/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/" data-id="cknvo6ut400046ktva39gd28v" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/" rel="tag">Shell</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-shell学习笔记" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/04/24/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">shell学习笔记</a>
+</h2>
+
+
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2021/04/24/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2021-04-24T04:06:35.000Z" itemprop="datePublished">2021-04-24</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <p>第一种运行方法<br>chmod +x ./filename.sh  使脚本具有执行权限<br>./filename.sh  执行脚本<br>第二种运行方法<br>/bin/sh test.sh</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash">约定的标记，告诉这个脚本需要哪个解释器来执行，即使用哪一种Shell</span></span><br><span class="line"></span><br><span class="line">echo &quot;Hello world!&quot;  #向窗口输出文本</span><br><span class="line"></span><br><span class="line">your_name=&quot;zhu&quot; #赋值时等号前后不能有空格</span><br><span class="line">variable_name=&quot;hui&quot;</span><br><span class="line">echo $you_name</span><br><span class="line">echo $&#123;you_name&#125;</span><br><span class="line"></span><br><span class="line">for skill in Ada Coffe Doda Java;</span><br><span class="line">do </span><br><span class="line">	echo &quot;I am good at $&#123;skill&#125;Script&quot;</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">myUrl=&quot;https://862826044.github.io&quot;</span><br><span class="line">readonly myUrl #将myUrl定义为只读变量，无法改变</span><br><span class="line"></span><br><span class="line">unset variable_name #删除变量，不能删除只读变量</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">局部变量</span></span><br><span class="line"><span class="meta">#</span><span class="bash">环境变量</span></span><br><span class="line"><span class="meta">#</span><span class="bash">shell变量</span></span><br><span class="line"></span><br><span class="line">str=&#x27;this is a string&#x27; #单引号里的任何字符都回原样输出，单引号中的字符串中的变量是无效的（可成对出现，作为字符串的拼接使用）</span><br><span class="line">your_name=&#x27;zhu&#x27;</span><br><span class="line">str=&quot;Hello,I know you are \&quot;$your_name\&quot;! \n&quot; #双引号中可以出现变量，也可以出现转义字符</span><br><span class="line">echo -e $str</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">拼接字符串</span></span><br><span class="line">greeting_1=&#x27;Hello,&#x27;$your_name&#x27; !&#x27;</span><br><span class="line">greeting_2=&#x27;Hello,$&#123;your_name&#125; !&#x27;</span><br><span class="line">echo $greeting_1 $greeting_2</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">获取字符串长度</span></span><br><span class="line">echo $&#123;#str&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">提取字符串</span></span><br><span class="line">echo $&#123;str:5:2&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">查找字符串(查找字符s或id的位置，哪个字符先出现就计算那个)</span></span><br><span class="line">echo `expr index &quot;$str&quot; si`</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">只支持一维数组</span></span><br><span class="line"><span class="meta">#</span><span class="bash">array_name=(value0 value1 ... valuen)</span></span><br><span class="line"><span class="meta">#</span><span class="bash">array_name[0]=value0 array_name[1]=value1 ...</span></span><br><span class="line">array_name=(5 3 6 2 2)</span><br><span class="line">value=$&#123;array_name[0]&#125;</span><br><span class="line">echo $&#123;array_name[0]&#125; &quot;=&quot; $value</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">获取数组中所有的元素</span></span><br><span class="line">echo &quot;数组的元素为：$&#123;array_name[*]&#125;&quot;</span><br><span class="line">echo &quot;数组的元素为：$&#123;array_name[@]&#125;&quot;</span><br><span class="line"><span class="meta">#</span><span class="bash">获取数组长度</span></span><br><span class="line">length0=$&#123;#array_name[@]&#125;</span><br><span class="line">length1=$&#123;#array_name[*]&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash">获取数组单个元素的长度</span></span><br><span class="line">length=$&#123;#array_name[2]&#125;</span><br><span class="line">echo $length $length0 $length1</span><br><span class="line"></span><br><span class="line">:&lt;&lt;EOF</span><br><span class="line">多行注释</span><br><span class="line">多行注释</span><br><span class="line">多行注释</span><br><span class="line">EOF</span><br><span class="line"><span class="meta">#</span><span class="bash">或其它符号</span></span><br><span class="line">:&lt;&lt;&#x27;</span><br><span class="line">多行注释</span><br><span class="line">多行注释</span><br><span class="line">多行注释</span><br><span class="line">’</span><br><span class="line">:&lt;&lt;！</span><br><span class="line">多行注释</span><br><span class="line">多行注释</span><br><span class="line">多行注释</span><br><span class="line">！</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/24/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cknvo6ut800096ktv0kzmaqx0" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/" rel="tag">Shell</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
     <article id="post-格式化输出(Rust)" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -98,11 +257,64 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/21/%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA(Rust)/" data-id="cknto21q500053otvg0lj0lh3" class="article-share-link">
+      <a data-url="http://example.com/2021/04/21/%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA(Rust)/" data-id="cknvo6ut700086ktv3xp3atyd" class="article-share-link">
         Share
       </a>
       
 <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rust-Programming/" rel="tag">Rust Programming</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-Zhu" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/04/13/Zhu/">zhu</a>
+</h2>
+
+
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2021/04/13/Zhu/" class="article-date">
+  <time datetime="2021-04-13T12:14:35.000Z" itemprop="datePublished">2021-04-13</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <p>我永远爱你❤</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/13/Zhu/" data-id="cknvo6ut200036ktv1pm70de6" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Personal-Notes/" rel="tag">Personal Notes</a></li></ul>
 
     </footer>
 
@@ -150,7 +362,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/13/HashSet%E7%9A%84%E4%BD%BF%E7%94%A8(Rust)/" data-id="cknto21py00013otvbilof94l" class="article-share-link">
+      <a data-url="http://example.com/2021/04/13/HashSet%E7%9A%84%E4%BD%BF%E7%94%A8(Rust)/" data-id="cknvo6usy00016ktvbtzy8jt3" class="article-share-link">
         Share
       </a>
       
@@ -202,7 +414,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/12/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%86%E7%A6%BB(Rust)/" data-id="cknto21q400043otv4w540g7z" class="article-share-link">
+      <a data-url="http://example.com/2021/04/12/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%86%E7%A6%BB(Rust)/" data-id="cknvo6uth000k6ktv8tjt853h" class="article-share-link">
         Share
       </a>
       
@@ -252,6 +464,7 @@
       
       <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Struct cargo::core::package::Package</span><br><span class="line">Struct cargo::core::package::Package.dependencies()</span><br><span class="line"><span class="comment">//&lt;https://docs.rs/cargo/0.52.0/cargo/core/package/struct.Package.html&gt;</span></span><br><span class="line">Struct cargo::core::manifest::Target<span class="comment">//有关软件包的一部分的二进制文件，库，示例等信息。</span></span><br><span class="line"><span class="comment">//&lt;https://docs.rs/cargo/0.52.0/cargo/core/manifest/struct.Target.html&gt;	</span></span><br><span class="line">Enum cargo::core::manifest::TargetKind<span class="comment">//pub enum TargetKind &#123; Lib(Vec&lt;CrateType&gt;),Bin,Test,Bench,...&#125;</span></span><br><span class="line"><span class="comment">//&lt;https://docs.rs/cargo/0.52.0/cargo/core/manifest/enum.TargetKind.html&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<p>parse_args() -&gt; Result&lt;Args, Box<dyn std::error::Error>&gt;</p>
 <p>real_main(args: &amp;Args, config: &amp;mut Config) -&gt; CliResult</p>
 <p>​        get_workspace(config: &amp;Config, manifest_path: Option<PathBuf>) -&gt; CargoResult<Workspace></p>
 <p>​        get_registry&lt;’a&gt;(config: &amp;’a Config,package: &amp;Package) -&gt; CargoResult&lt;PackageRegistry&lt;’a&gt;&gt;</p>
@@ -268,11 +481,26 @@
 <p>​                                find_rs_files_in_package(pack: &amp;Package) -&gt; Vec<RsFile></p>
 <p>​                                        find_rs_files_in_dir(dir: &amp;Path) -&gt; impl Iterator&lt;Item = PathBuf&gt;</p>
 <p>​                                        into_rs_code_file(kind: &amp;TargetKind, path: PathBuf) -&gt; RsFile</p>
+<p>​                        find_unsafe_in_file(p: &amp;Path, include_tests: IncludeTests) -&gt; Result&lt;RsFileMetrics, ScanFileError&gt;</p>
+<p>​                will_output_emoji(&amp;self) -&gt; bool</p>
+<p>​                emoji(&amp;self, kind: SymbolKind) -&gt; Box<dyn std::fmt::Display></p>
+<p>​                walk_dependency_tree(root_pack_id: PackageId, graph: &amp;Graph, pc: &amp;PrintConfig) -&gt; Vec<TextTreeLine></p>
+<p>​                        walk_dependency_node(package: &amp;Node, graph: &amp;Graph, visited_deps: &amp;mut HashSet<PackageId>, levels_continue: &amp;mut Vec<bool>, pc: &amp;PrintConfig) -&gt; Vec<TextTreeLine> </p>
+<p>​                                get_tree_symbols(cs: Charset) -&gt; TreeSymbols</p>
+<p>​                                walk_dependency_kind(kind: DepKind, deps: &amp;mut Vec&lt;&amp;Node&gt;, graph: &amp;Graph, visited_deps: &amp;mut HashSet<PackageId>, levels_continue: &amp;mut Vec<bool>, pc: &amp;PrintConfig) -&gt; Vec<TextTreeLine></p>
+<p>​                                        get_tree_symbols(cs: Charset) -&gt; TreeSymbols</p>
+<p>​                                        walk_dependency_node(package: &amp;Node, graph: &amp;Graph, visited_deps: &amp;mut HashSet<PackageId>, levels_continue: &amp;mut Vec<bool>, pc: &amp;PrintConfig) -&gt; Vec<TextTreeLine>     </p>
+<p>​                colorize(s: String, detection_status: &amp;DetectionStatus) -&gt; colored::ColoredString</p>
+<p>​                        table_row(pms: &amp;PackageMetrics, rs_files_used: &amp;HashSet<PathBuf>) -&gt; String（嵌套函数）</p>
+<p>​                will_output_emoji(&amp;self) -&gt; bool</p>
+<p>​                get_kind_group_name(k: DepKind) -&gt; Option&lt;&amp;’static str&gt;</p>
+<p>​                table_row_empty() -&gt; String</p>
+<p>​                table_footer(used: CounterBlock, not_used: CounterBlock, status: DetectionStatus) -&gt; colored::ColoredString </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/08/Geiger/" data-id="cknto21pq00003otvhby2c2zs" class="article-share-link">
+      <a data-url="http://example.com/2021/04/08/Geiger/" data-id="cknvo6usq00006ktv6him9y26" class="article-share-link">
         Share
       </a>
       
@@ -325,7 +553,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/08/HashMap%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8(Rust)/" data-id="cknto21q200033otvciis8wz1" class="article-share-link">
+      <a data-url="http://example.com/2021/04/08/HashMap%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8(Rust)/" data-id="cknvo6uti000l6ktvewsdamre" class="article-share-link">
         Share
       </a>
       
